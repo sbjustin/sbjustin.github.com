@@ -1,0 +1,25 @@
+.twitter {
+  background-color: #efefef;
+  border: 1px solid #cccccc;
+  width: 40%;
+  text-shadow: 0px 1px 0px #ffffff;
+  filter: dropshadow(color=#ffffff, offx=0, offy=1);
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-bottom: 50px;
+}
+
+.twitter li{
+  list-style-type: none;
+  border: 1px dotted #cccccc;
+  padding:5px;
+  margin-top: 5px;
+  background-color: #FAFCFC; 
+  font-weight:300;
+  color:#999;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.full {
+  display: block;
+}
