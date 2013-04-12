@@ -1,4 +1,9 @@
-.twitter {
+.feeds {
+  display:table-row;
+  padding-bottom: 50px;
+}
+.feed {
+  height: 100%;
   background-color: #efefef;
   border: 1px solid #cccccc;
   width: 40%;
@@ -6,18 +11,27 @@
   filter: dropshadow(color=#ffffff, offx=0, offy=1);
   padding-top:5px;
   padding-bottom:5px;
-  margin-bottom: 50px;
 }
 
-.twitter li{
+.feed ul{
+margin: 0px 10px 0px 10px;
+}
+
+.feed li{
   list-style-type: none;
   border: 1px dotted #cccccc;
-  padding:5px;
+  padding:0px 5px 5px 5px;
   margin-top: 5px;
   background-color: #FAFCFC; 
   font-weight:300;
   color:#999;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+.feed img{
+height:20px;
+width: 20px;
+padding-top: 5px;
 }
 
 .full {

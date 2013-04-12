@@ -8,7 +8,7 @@
 	<meta name="description" content="Justin Nash's links on the web." />
 
 	<link rel="stylesheet" href="stylesheets/style_1.css" type="text/css" media="screen, projection">
-	<link rel="stylesheet" href="stylesheets/twitter.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="stylesheets/feeds.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="stylesheets/print.css" type="text/css" media="print">
 	<style type="text/css" media="screen">
 		p, table, hr, .box { margin-bottom:25px; }
@@ -48,8 +48,8 @@
   		  <a href="/resume.html" class="profile-item last" target="_blank">Resume</a>
       </h2>
 		
-      <div class="span4 offset4">
-      <div class="twitter">
+      <div class="feeds">
+      <div class="feed span-4">
       <ul><div id="jstweets"></div></ul>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script>
@@ -68,14 +68,46 @@
             twitterURL = "http://twitter.com/";
             ct = ct.replace(/\s(@)(\w+)/g,    ' @<a href="'+twitterURL+'$2">$2</a>');
             ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="'+twitterURL+'search?q=%23$2" target="_blank">$2</a>');
-            $("#jstweets").append('<li>'+ct + ' <small><i>(' + mydate +  ')</i></small></li>');
+            $("#jstweets").append('<li><img src="https://twitter.com/images/resources/twitter-bird-light-bgs.png" class="logo">'+ct + ' <small><i>(' + mydate +  ')</i></small></li>');
           });
         }
       });
       </script>
     </div>
-    </div>
+
     
+      <div class="feed span-4" style="float:right;margin-right:0px;">
+        <ul><div id="posts_div"></div></ul>
+      </div>
+
+    </div>
+      <script type="text/javascript">
+      function tumblr(data) {
+        
+        var posts = data.response.posts;
+        for (var i=0; i<5; i++) {
+          var p = posts[i];
+          var title = p.title;
+          if(title){
+            var date_arr = p.date.split(" ")[0].split("-")
+            var date_str = date_arr[1] + "/" + date_arr[2] + "/" + date_arr[0]
+            $("#posts_div").append('<li><a href="'+p.post_url+'">'+title+'</a>&nbsp;<span class="date">' + date_str + '</span></li>');
+          }
+        }
+      }
+      </script>
+    <script>
+        $(function(){
+          $.ajax({
+            url: 'http://api.tumblr.com/v2/blog/simplybinary.tumblr.com/posts?tag=pete&jsonp=tumblr&limit=10',
+            data: { api_key: "all8BnWBQruzk0kzqQNXzCH8E4UpMQ1yfADo7C0G8bmIdG9Kbd"},
+            dataType: "jsonp",
+            jsonp : "tumblr"
+          });
+        })
+        
+</script>
+
 
     </div>
     
