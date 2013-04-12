@@ -50,6 +50,9 @@
 		
       <div class="feeds">
       <div class="feed span-4">
+        <h1 style="margin-bottom: 0px;">
+          <img src="https://twitter.com/images/resources/twitter-bird-light-bgs.png" class="logo"><a href="https://twitter.com/justinnash2">@justinnash2</a>
+        </h1>
       <ul><div id="jstweets"></div></ul>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script>
@@ -66,9 +69,10 @@
             var mytime = new Date(Date.parse(strtime)).toLocaleTimeString();
             ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
             twitterURL = "http://twitter.com/";
+            ct = ct.replace(/^(@)(\w+)/g,    ' @<a href="'+twitterURL+'$2">$2</a>');
             ct = ct.replace(/\s(@)(\w+)/g,    ' @<a href="'+twitterURL+'$2">$2</a>');
             ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="'+twitterURL+'search?q=%23$2" target="_blank">$2</a>');
-            $("#jstweets").append('<li><img src="https://twitter.com/images/resources/twitter-bird-light-bgs.png" class="logo">'+ct + ' <small><i>(' + mydate +  ')</i></small></li>');
+            $("#jstweets").append('<li>'+ct + ' <small><i>(' + mydate +  ')</i></small></li>');
           });
         }
       });
@@ -77,6 +81,9 @@
 
     
       <div class="feed span-4" style="float:right;margin-right:0px;">
+        <h1 style="margin-bottom: 0px;">
+          <img src="images/tumblr.png" class="logo"><a href="http://blog.simplybinary.com"> blog.simplybinary.com</a>
+        </h1>
         <ul><div id="posts_div"></div></ul>
       </div>
 
@@ -91,7 +98,7 @@
           if(title){
             var date_arr = p.date.split(" ")[0].split("-")
             var date_str = date_arr[1] + "/" + date_arr[2] + "/" + date_arr[0]
-            $("#posts_div").append('<li><a href="'+p.post_url+'">'+title+'</a>&nbsp;<span class="date">' + date_str + '</span></li>');
+            $("#posts_div").append('<li><a href="'+p.post_url+'">'+title+'</a>&nbsp;<span class="date"><small><i>(' + date_str + '</i></small></span></li>');
           }
         }
       }

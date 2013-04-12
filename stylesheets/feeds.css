@@ -1,16 +1,28 @@
 .feeds {
   display:table-row;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 .feed {
   height: 100%;
+  min-height: 100%;
   background-color: #efefef;
   border: 1px solid #cccccc;
-  width: 40%;
+  width: 49%;
   text-shadow: 0px 1px 0px #ffffff;
   filter: dropshadow(color=#ffffff, offx=0, offy=1);
   padding-top:5px;
   padding-bottom:5px;
+}
+
+.feed h1{
+  padding-left: 5px;
+}
+
+.feed h1 a{
+  font-size: 14px;
+  border: none;
+  vertical-align: middle;
+
 }
 
 .feed ul{
@@ -28,10 +40,14 @@ margin: 0px 10px 0px 10px;
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.feed li a{
+  border: 0px;
+}
+
 .feed img{
 height:20px;
 width: 20px;
-padding-top: 5px;
+padding-left: 5px;
 }
 
 .full {
