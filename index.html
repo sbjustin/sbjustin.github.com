@@ -53,7 +53,7 @@
         <h1 style="margin-bottom: 0px;">
           <img src="https://twitter.com/images/resources/twitter-bird-light-bgs.png" class="logo"><a href="https://twitter.com/justinnash2">@justinnash2</a>
         </h1>
-      <ul><div id="jstweets"></div></ul>
+      <ul><li id="waiting_twitter">Waiting on a response from Twitter...</li><div id="jstweets"></div></ul>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script>
       $.ajax({
@@ -74,6 +74,7 @@
             ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="'+twitterURL+'search?q=%23$2" target="_blank">$2</a>');
             $("#jstweets").append('<li>'+ct + ' <small><i>(' + mydate +  ')</i></small></li>');
           });
+          $("#waiting_twitter").hide();
         }
       });
       </script>
@@ -84,7 +85,7 @@
         <h1 style="margin-bottom: 0px;">
           <img src="images/tumblr.png" class="logo"><a href="http://blog.simplybinary.com"> blog.simplybinary.com</a>
         </h1>
-        <ul><div id="posts_div"></div></ul>
+        <ul><li id="waiting_tumblr">Waiting on a response from Tumblr...</li><div id="posts_div"></div></ul>
       </div>
 
     </div>
@@ -100,7 +101,8 @@
             var date_str = date_arr[1] + "/" + date_arr[2] + "/" + date_arr[0]
             $("#posts_div").append('<li><a href="'+p.post_url+'">'+title+'</a>&nbsp;<span class="date"><small><i>(' + date_str + '</i></small></span></li>');
           }
-        }
+        };
+        $("#waiting_tumblr").hide();
       }
       </script>
     <script>
