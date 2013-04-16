@@ -1,6 +1,9 @@
 .feeds {
-  display:table-row;
+  display:block;
+  margin-bottom: 500px;
+  /*position: absolute;
   margin-bottom: 50px;
+  height: 100%;*/
 }
 .feed {
   height: 100%;

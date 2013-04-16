@@ -57,7 +57,7 @@
       <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script>
       $.ajax({
-        url: 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=justinnash2&count=5&callback=?',
+        url: 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=justinnash2&count=5&include_rts=1&exclude_replies=false&trim_user=true&callback=?',
         dataType: 'json',
         success: function(data){
           $.each(data, function(i,item){
