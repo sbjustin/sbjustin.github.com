@@ -93,7 +93,7 @@
       function tumblr(data) {
         
         var posts = data.response.posts;
-        for (var i=0; i<5; i++) {
+        for (var i=0; i<posts.length; i++) {
           var p = posts[i];
           var title = p.title;
           if(title){
@@ -108,7 +108,7 @@
     <script>
         $(function(){
           $.ajax({
-            url: 'http://api.tumblr.com/v2/blog/simplybinary.tumblr.com/posts?tag=pete&jsonp=tumblr&limit=10',
+            url: 'http://api.tumblr.com/v2/blog/simplybinary.tumblr.com/posts?tag=justin&jsonp=tumblr&limit=8',
             data: { api_key: "all8BnWBQruzk0kzqQNXzCH8E4UpMQ1yfADo7C0G8bmIdG9Kbd"},
             dataType: "jsonp",
             jsonp : "tumblr"
