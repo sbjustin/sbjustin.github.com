@@ -49,39 +49,10 @@
       </h2>
 		
       <div class="feeds">
-      <div class="feed span-4">
-        <h1 style="margin-bottom: 0px;">
-          <img src="https://twitter.com/images/resources/twitter-bird-light-bgs.png" class="logo"><a href="https://twitter.com/justinnash2">@justinnash2</a>
-        </h1>
-      <ul><li id="waiting_twitter">Waiting on a response from Twitter...</li><div id="jstweets"></div></ul>
-      <script src="http://code.jquery.com/jquery-latest.js"></script>
-      <script>
-      $.ajax({
-        url: 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=justinnash2&count=5&include_rts=1&exclude_replies=false&trim_user=true&callback=?',
-        dataType: 'json',
-        success: function(data){
-          $.each(data, function(i,item){
-            ct = item.text;
-            // include time tweeted - thanks to will
-            mytime = item.created_at;
-            var strtime = mytime.replace(/(\+\S+) (.*)/, '$2 $1')
-            var mydate = new Date(Date.parse(strtime)).toLocaleDateString();
-            var mytime = new Date(Date.parse(strtime)).toLocaleTimeString();
-            ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
-            twitterURL = "http://twitter.com/";
-            ct = ct.replace(/^(@)(\w+)/g,    ' @<a href="'+twitterURL+'$2">$2</a>');
-            ct = ct.replace(/\s(@)(\w+)/g,    ' @<a href="'+twitterURL+'$2">$2</a>');
-            ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="'+twitterURL+'search?q=%23$2" target="_blank">$2</a>');
-            $("#jstweets").append('<li>'+ct + ' <small><i>(' + mydate +  ')</i></small></li>');
-          });
-          $("#waiting_twitter").hide();
-        }
-      });
-      </script>
-    </div>
+      
 
     
-      <div class="feed span-4" style="float:right;margin-right:0px;">
+      <div class="feed" style="float:right;margin-right:0px;">
         <h1 style="margin-bottom: 0px;">
           <img src="images/tumblr.png" class="logo"><a href="http://blog.simplybinary.com"> blog.simplybinary.com</a>
         </h1>
