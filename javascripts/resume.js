@@ -5,10 +5,10 @@ $.ajax({
       for (var i = 0; i < json.data.length; i++) {
         link = document.createElement("a");
         if(json.data[i].login == 'sbjustin'){
-          link.textContent = '@' + json.data[i].login + '(Me)'; 
+          link.textContent = json.data[i].login + '(Me)'; 
         }
         else{
-          link.textContent = '@' + json.data[i].login;
+          link.textContent = json.data[i].login;
         }
         
         link.title = json.data[i].login;
