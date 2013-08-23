@@ -59,5 +59,11 @@
 	list-style-type:square;
 }
 .inner{
-	padding: 0px 40px 0px 40px;
+	padding: 20px 40px 40px 40px;
+}
+
+li a{
+	color: black;
+	text-decoration: none;
+	border-bottom:1px dotted #CCC;
 }

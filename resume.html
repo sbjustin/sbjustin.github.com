@@ -9,6 +9,9 @@
 	<meta name="description" content="Justin Nash" />
 
 	<link rel="stylesheet" type="text/css" href="stylesheets/resume.css"  />
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="javascripts/date.js"></script>
 </head>
 <body>
 <div id = "wrapper">
@@ -92,14 +95,49 @@
 	</div>
 
 	<div class = "section">
-		<div class = "category">Education</div>						
-		<ul>
-			<li>
-	George Mason University - 
-	90+ hours of coursework in Computer Science and Administration of Justice
-	</li>
-</ul>
+		<div class = "category">Projects
+		</div>						
+			
+		<h1><a href="http://www.justinnash.net/monopoly" target="_blank">Monopoly</a></h1>								
+		<h2>Last Updated at: <span id = 'monopoly_last_update'></span></h2>
+		<div class = "title">JavaScript, HTML, CSS
+		</div>
+			<ul>
+				<li>Coding monopoly for the experience/pleasure. This is still a work in progress.</li>
+				<li>Contributors: <a title="sbjustin" href="https://github.com/sbjustin" target="_blank">@sbjustin(Me)</a></li>
+			</ul>
+	
+		<h1><a href="http://rubyloco.com" target="_blank">Ruby LoCo</a></h1>								
+		<h2>Last Updated at: <span id = 'rubyloco_last_update'></span></h2>
+		<div class = "title">Ruby, CoffeeScript, SASS, HAML, HTML
+		</div>
+			<ul>
+				<li>Ruby LoCo is a group of rubyists based out of Loudoun County, Virginia. We meet on the second Monday and the last Friday of every month.</li>
+				<li>Contributors: <span id = 'rubyloco_contributors'></span></li> 
+			</ul>
+
+
+		<h1><a href="http://www.justinnash.net/" target="_blank">www.justinnash.net</a></h1>								
+		<h2>Last Updated at: <span id = 'justinnashnet_last_update'></span></h2>
+		<div class = "title">JavaScript, HTML, CSS
+		</div>
+			<ul>
+				<li>My personal website</li>
+				<li>Contributors: <a title="sbjustin" href="https://github.com/sbjustin" target="_blank">@sbjustin(Me)</a></li>
+			</ul>
+
+
 	</div>
+
+	
+
+	<div class = "section">
+		<div class = "category">Education
+		</div>						
+			<ul>
+				<li>George Mason University - 90+ hours of coursework in Computer Science and Administration of Justice</li>
+			</ul>
+		</div>
 	</div>
 </div>
 <script type="text/javascript">
@@ -115,6 +153,8 @@
   })();
 
 </script>
+
+<script src="javascripts/resume.js"></script>
 
 </body>
 </html>
